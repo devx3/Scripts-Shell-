@@ -27,6 +27,18 @@ then
 	mkdir -p $_MAGHOST
 fi
 
+echo "# VERSÃO DO MAGENTO #"
+echo -e "1.7.0.2 - Stable Version\n1.8.1.0 - Stable Version\n1.9.0.1 - Stable Version\n"
+read -p "Digite uma das versões acima: "
+MAGVERSION=$REPLY
+
+# Caso não seja escolhido uma versão
+if [ $MAGVERSION == "" ]
+then
+	# Pega a ultima release
+	MAGVERSION="1.9.0.1"
+fi
+
 # INFORMAÇÕES BÁSICAS
 echo -n "Qual o dominio? "; read DOMAIN
 #Nome do Banco Mysql
@@ -56,9 +68,9 @@ cd $_MAGHOST
 
 #Baixa o magento
 echo "# INICIANDO DOWNLOAD DO MAGENTO #"
-wget http://www.magentocommerce.com/downloads/assets/1.9.0.0/magento-1.9.0.0.tar.gz
+wget http://www.magentocommerce.com/downloads/assets/$MAGVERSION/magento-$MAGVERSION.tar.gz
 
-tar -xvzf magento-1.9.0.0.tar.gz
+tar -xvzf magento-$MAGVERSION.tar.gz
 mv magento/ $DOMAIN && rm *.tar.gz
 
 # Setando permissão 755 geral
