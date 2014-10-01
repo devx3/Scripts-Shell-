@@ -9,7 +9,7 @@ then
 	exit
 fi
 
-_MAGHOST=/var/www/html/magento
+_MAGHOST=/var/www/magento
 echo "# INICIANDO INSTALAÇÃO DO MAGENTO #"
 # Verifica se existe pasta do magento
 if [ ! -d $_MAGHOST ]
@@ -59,7 +59,7 @@ echo "# INICIANDO DOWNLOAD DO MAGENTO #"
 wget http://www.magentocommerce.com/downloads/assets/1.9.0.0/magento-1.9.0.0.tar.gz
 
 tar -xvzf magento-1.9.0.0.tar.gz
-mv $( ls | grep -v "tar.gz" ) $DOMAIN && rm *.tar.gz
+mv magento/ $DOMAIN && rm *.tar.gz
 
 # Setando permissão 755 geral
 chmod -R 755 $DOMAIN
