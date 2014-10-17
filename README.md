@@ -1,4 +1,0 @@
-Scripts-Shell-
-==============
-
-Scripts diversos
