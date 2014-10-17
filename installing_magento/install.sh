@@ -77,7 +77,7 @@ mv magento/ $DOMAIN && rm *.tar.gz
 chmod -R 755 $DOMAIN
 
 # Seta permissões para pasta de imagens, módulos, logs...
-chmod -R 777 $DOMAIN/media $DOMAIN/app/etc $DOMAIN/var/ $DOMAIN/var/.htaccess $DOMAIN/includes
+chmod -R 777 $DOMAIN/media $DOMAIN/app/etc $DOMAIN/var/ $DOMAIN/var/.htaccess $DOMAIN/includes $DOMAIN/downloader
 echo ' - OK!';
 sleep 1
 clear
